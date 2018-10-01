@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.UUID;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -23,7 +25,12 @@ public class GetProductsIntegrationTest {
 
     @Test
     public void shouldReturnStatusOk() throws Exception {
-        this.mockMvc.perform(get("/products"))
+        final String rid = UUID.randomUUID().toString();
+        final String sid = UUID.randomUUID().toString();
+        this.mockMvc.perform(
+                get("/products")
+                        .header("rid",rid)
+                        .header("sid", sid))
                 .andDo(print())
                 .andExpect(status().isOk());
     }

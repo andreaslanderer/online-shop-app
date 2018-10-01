@@ -1,5 +1,6 @@
 package com.landerer.osa.main;
 
+import com.landerer.osa.commons.config.CommonsConfig;
 import com.landerer.osa.product.config.ProductConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -8,7 +9,8 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@Import({ ProductConfiguration.class })
+@Import({ CommonsConfig.class,
+        ProductConfiguration.class })
 public class MainApp {
 
     public static void main(String[] args) {

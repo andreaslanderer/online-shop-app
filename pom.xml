@@ -20,6 +20,7 @@
         <module>main</module>
         <module>product</module>
         <module>integration-tests</module>
+        <module>commons</module>
     </modules>
 
 </project>
