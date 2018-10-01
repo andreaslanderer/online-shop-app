@@ -19,6 +19,7 @@
     <modules>
         <module>main</module>
         <module>product</module>
+        <module>integration-tests</module>
     </modules>
 
 </project>
